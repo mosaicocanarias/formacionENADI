@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69MJYGWTM3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-69MJYGWTM3');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Elige cómo realizar el pago de la formación ENADI de Mosaico Acción Social." />
@@ -164,12 +172,12 @@
       <p class="tax">Impuestos incluidos</p>
 
       <div class="choices">
-        <a class="choice stripe" href="https://buy.stripe.com/fZuaEY3uh7oh8nG0u993y00">
+        <a class="choice stripe" data-payment-method="stripe" href="https://buy.stripe.com/fZuaEY3uh7oh8nG0u993y00">
           <strong>Pagar con tarjeta</strong>
           <span>Pago seguro a través de Stripe</span>
         </a>
 
-        <a class="choice paypal" href="https://www.paypal.com/ncp/payment/FK8MZXZQWK3DY">
+        <a class="choice paypal" data-payment-method="paypal" href="https://www.paypal.com/ncp/payment/FK8MZXZQWK3DY">
           <strong>Pagar con PayPal</strong>
           <span>PayPal y opciones disponibles en tu país</span>
         </a>
@@ -179,5 +187,19 @@
       <a class="back" href="https://mosaicoformacion.org/">Volver a la formación</a>
     </section>
   </main>
+
+  <script>
+    document.querySelectorAll('[data-payment-method]').forEach(function(link){
+      link.addEventListener('click', function(){
+        if (typeof gtag === 'function') {
+          gtag('event', 'metodo_pago_seleccionado', {
+            metodo_pago: link.getAttribute('data-payment-method'),
+            value: 160,
+            currency: 'EUR'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

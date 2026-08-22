@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69MJYGWTM3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-69MJYGWTM3');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Formación en Facilitación de Grupos desde el Enfoque Narrativo Dialógico (ENADI) de Mosaico Acción Social." />
@@ -528,12 +536,6 @@
         <h2>Cuatro encuentros para trabajar, compartir y llevar el ENADI a la práctica.</h2>
         <p>Todos los encuentros serán de <strong>16:00 a 18:00, hora canaria</strong>. Las cuatro sesiones mantienen la misma franja horaria. Aunque aquí escribimos las correspondencias horarias con algunos países, por favor confirma cuál es el horario en el territorio que te encuentras. Las sesiones se realizarán a través de una plataforma de video y quedarán grabadas. Se acompañarán además con materiales y lecturas complementarias.</p>
       </div>
-      <div class="dates-grid">
-        <article class="date-card"><span class="session">Sesión 1</span><strong>22 de septiembre</strong><span>Martes · 16:00–18:00 · Canarias</span></article>
-        <article class="date-card"><span class="session">Sesión 2</span><strong>29 de septiembre</strong><span>Martes · 16:00–18:00 · Canarias</span></article>
-        <article class="date-card"><span class="session">Sesión 3</span><strong>6 de octubre</strong><span>Martes · 16:00–18:00 · Canarias</span></article>
-        <article class="date-card"><span class="session">Sesión 4</span><strong>13 de octubre</strong><span>Martes · 16:00–18:00 · Canarias</span></article>
-      </div>
       <div class="timezone-box">
         <h3>Equivalencia horaria</h3>
         <p>Para las cuatro sesiones, la franja de 16:00–18:00 en Canarias corresponde a:</p>
@@ -574,14 +576,14 @@
           <div class="trust-card">
             <b>Asociación Mosaico</b>
             <p>Si necesitas resolver cualquier duda antes de inscribirte, puedes escribirnos directamente.</p>
-            <a href="mailto:mosaicocanarias@gmail.com">mosaicocanarias@gmail.com</a>
+            <a href="mailto:mosaicoformacion@gmail.com">mosaicoformacion@gmail.com</a>
           </div>
         </div>
 
         <div class="signup-form-card">
           <div class="form-kicker">Formulario de inscripción</div>
           <h3>Reserva tu plaza</h3>
-          <form id="registration-form" action="https://formsubmit.co/mosaicocanarias@gmail.com" method="POST">
+          <form id="registration-form" action="https://formsubmit.co/mosaicoformacion@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Nueva matrícula · Formación ENADI" />
             <input type="hidden" name="_next" value="https://mosaicoformacion.org/pago.html" />
             <input type="hidden" name="_template" value="table" />
@@ -622,8 +624,25 @@
       <img src="https://static.wixstatic.com/media/ae1699_597f2af6a2cf474c887747b705fb548c~mv2.png/v1/fill/w_336%2Ch_94%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/logogrande.png" alt="Mosaico" />
       <p>Mosaico Acción Social · Formación, facilitación y acompañamiento de procesos sociales.</p>
     </div>
-    <div><p><b>Asociación Mosaico · contacto</b><br><a href="mailto:mosaicocanarias@gmail.com">mosaicocanarias@gmail.com</a></p></div>
+    <div><p><b>Asociación Mosaico · contacto</b><br><a href="mailto:mosaicoformacion@gmail.com">mosaicoformacion@gmail.com</a></p></div>
   </div>
 </footer>
+
+  <script>
+    (function(){
+      var form = document.getElementById('registration-form');
+      if (form) {
+        form.addEventListener('submit', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'matricula_enviada', {
+              event_category: 'inscripcion',
+              value: 160,
+              currency: 'EUR'
+            });
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

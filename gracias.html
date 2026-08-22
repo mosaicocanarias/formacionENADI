@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69MJYGWTM3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-69MJYGWTM3');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Confirmación de inscripción a la formación ENADI de Mosaico Acción Social." />
@@ -45,8 +53,18 @@
       <p>Gracias por sumarte a la Formación en Facilitación de Grupos desde el Enfoque Narrativo Dialógico (ENADI).</p>
       <div class="detail">Hemos recibido tu inscripción. Conserva el comprobante de Stripe y, antes del inicio de la formación, recibirás la información necesaria para participar.</div>
       <a class="button" href="https://mosaicoformacion.org/">Volver a la formación</a>
-      <div class="contact">Si necesitas escribirnos: <a href="mailto:mosaicocanarias@gmail.com">mosaicocanarias@gmail.com</a></div>
+      <div class="contact">Si necesitas escribirnos: <a href="mailto:mosaicoformacion@gmail.com">mosaicoformacion@gmail.com</a></div>
     </section>
   </main>
+
+  <script>
+    if (typeof gtag === 'function') {
+      gtag('event', 'inscripcion_confirmada', {
+        event_category: 'conversion',
+        value: 160,
+        currency: 'EUR'
+      });
+    }
+  </script>
 </body>
 </html>
